@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,23 +13,65 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cells" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80K-F1-uCL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hN-EV-LVD">
+                                <rect key="frame" x="377" y="1074" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="M4l-J7-fU4"/>
+                                    <constraint firstAttribute="height" constant="80" id="dF9-Mu-LME"/>
+                                </constraints>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BSS-6g-3sC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTp-71-obA">
+                                <rect key="frame" x="20" y="20" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="GuV-Pl-dpe"/>
+                                    <constraint firstAttribute="height" constant="30" id="Zug-Xk-W2n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbh-7y-1Fq">
+                                <rect key="frame" x="20" y="90" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="F7Z-Jc-pMa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="iMb-Ru-hVE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="80K-F1-uCL" secondAttribute="bottom" id="4h7-Lj-tBh"/>
-                            <constraint firstItem="80K-F1-uCL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ArF-21-WbJ"/>
-                            <constraint firstItem="80K-F1-uCL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OF6-iC-632"/>
-                            <constraint firstItem="80K-F1-uCL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ykc-7U-KMy"/>
+                            <constraint firstItem="RTp-71-obA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3i6-DL-f5Y"/>
+                            <constraint firstItem="80K-F1-uCL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7rh-6X-pQu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4hN-EV-LVD" secondAttribute="bottom" constant="20" id="Bxc-yt-TLw"/>
+                            <constraint firstItem="pbh-7y-1Fq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="D8X-dQ-n0h"/>
+                            <constraint firstAttribute="bottom" secondItem="80K-F1-uCL" secondAttribute="bottom" id="KRr-bd-1S6"/>
+                            <constraint firstItem="80K-F1-uCL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cXf-cj-8tt"/>
+                            <constraint firstItem="4hN-EV-LVD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="du8-7K-9oM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pbh-7y-1Fq" secondAttribute="trailing" id="qNr-BU-52J"/>
+                            <constraint firstItem="80K-F1-uCL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vQZ-eZ-g8T"/>
+                            <constraint firstItem="pbh-7y-1Fq" firstAttribute="top" secondItem="RTp-71-obA" secondAttribute="bottom" constant="40" id="vX6-zU-uCo"/>
+                            <constraint firstItem="RTp-71-obA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wrN-WF-ZJg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RTp-71-obA" secondAttribute="trailing" id="y31-IP-Q8m"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lblLat" destination="RTp-71-obA" id="jkl-pN-r0N"/>
+                        <outlet property="lblLon" destination="pbh-7y-1Fq" id="IM9-ir-zRd"/>
                         <outlet property="sceneView" destination="80K-F1-uCL" id="l33-Co-IX2"/>
                     </connections>
                 </viewController>
