@@ -11,12 +11,34 @@ import ARKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var sceneView: ARSCNView!
+    
+    @IBOutlet weak var lblLat: UILabel!
+    
+    @IBOutlet weak var lblLon: UILabel!
     let configuration = ARWorldTrackingConfiguration()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
         self.sceneView.session.run(configuration)
         self.sceneView.autoenablesDefaultLighting = true
+        let locManager = CLLocationManager()
+        var hasPermision = true
+        switch locManager.authorizationStatus {
+        case .restricted, .denied:
+            hasPermision = false
+        default:
+            hasPermision = true
+        }
+        locManager.requestWhenInUseAuthorization()
+        var currentLocation: CLLocation!
+        if hasPermision
+        {
+            currentLocation = locManager.location
+        }
+        lblLat.text = "\(currentLocation.coordinate.latitude)"
+        lblLon.text = "\(currentLocation.coordinate.longitude)"
+        
+        
     }
 
     @IBAction func add(_ sender: Any) {
